@@ -13,12 +13,17 @@ import {
 let store = createStore(todoApp);
 
 function App() {
-    console.log(store.getState());
+    // console.log(store.getState());
+    let unsuscribe = store.subscribe(() => {
+        console.log(store.getState());
+    });
     store.dispatch(addTodo('Aprender sobre acciones'));
     store.dispatch(addTodo('Aprender sobre reductores'));
     store.dispatch(addTodo('Aprender sobre stores'));
     store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED));
-    console.log(store.getState());
+    // console.log(store.getState());
+
+    unsuscribe();
 
     return (
         <div className="App">
