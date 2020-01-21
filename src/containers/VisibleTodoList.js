@@ -10,6 +10,8 @@ const getVisibleTodos = (todos, filter) => {
             return todos.filter(t => t.completed);
         case 'SHOW_ACTIVE':
             return todos.filter(t => !t.completed);
+        default:
+            throw Error('error in getVisibleTodos... Esto nunca va a pasar');
     }
 };
 
