@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { completeTodo } from '../redux/actions';
+import { toggleTodo } from '../actions';
 import TodoList from '../components/TodoList';
 
 const getVisibleTodos = (todos, filter) => {
@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onTodoClick: id => {
-            dispatch(completeTodo(id));
+            dispatch(toggleTodo(id));
             // console.log('falta un dispatch');
         }
     };
