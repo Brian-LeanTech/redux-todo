@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onTodoClick: id => {
             dispatch(completeTodo(id));
-            console.log('falta un dispatch');
+            // console.log('falta un dispatch');
         }
     };
 };
